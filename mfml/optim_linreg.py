@@ -11,7 +11,7 @@ def linfit(x, y):
 x = np.array([0.4, 0.5, 0.6, 0.7, 0.8])
 y = np.array([0.1, 0.25, 0.55, 0.75, 0.85])
 
-re_1 = linfit(x=x, y=y)
-re_2 = stats.linregress(x=x, y=y)
+%time re_1 = linfit(x=x, y=y)
+%time re_2 = stats.linregress(x=x, y=y)
 
 
