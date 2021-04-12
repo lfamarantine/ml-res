@@ -1,5 +1,6 @@
 import numpy as np
 from scipy import stats
+import time
 
 def linfit(x, y):
   xh = np.sum(x)/len(x)
