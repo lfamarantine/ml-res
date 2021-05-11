@@ -12,9 +12,6 @@
 #     gradientDescent.m
 #     computeCost.m
 #
-#  For this exercise, you will not need to change any code in this file,
-#  or any other files other than those mentioned above.
-#
 # x refers to the population size in 10,000s
 # y refers to the profit in $10,000s
 
@@ -32,8 +29,6 @@ import gradientDescent as grde
 
 
 ## ==================== Part 1: Basic Function ====================
-# Complete warmUpExercise.py
-
 print('Running warmUpExercise...')
 print('5x5 Identity Matrix: ')
 
@@ -50,8 +45,6 @@ y = data[:, 1]
 m = len(y) # number of training examples
 
 # Plot Data
-# Note: You have to complete the code in plotData.py
-
 plda.plotData(X, y)
 
 input('Program paused. Press enter to continue.\n')
@@ -76,13 +69,13 @@ theta = grde.gradientDescent(X_padded, y, theta, alpha, iterations)
 print('Theta found by gradient descent: ')
 print("{:f}, {:f}".format(theta[0,0], theta[1,0]))
 
-# # Plot the linear fit
+# Plot the linear fit
 plt.plot(X, X_padded.dot(theta),'-', label='Linear regression')
 plt.legend(loc='lower right')
 plt.draw()
 plt.hold(False) # prevents further plotting on the same figure
 
-# # Predict values for population sizes of 35,000 and 70,000
+# Predict values for population sizes of 35,000 and 70,000
 predict1 = np.array([1, 3.5]).dot(theta)
 print("For population = 35,000, we predict a profit of {:f}".format( float(predict1*10000) ))
 predict2 = np.array([1, 7]).dot(theta)
@@ -111,7 +104,6 @@ for i in range(len(theta0_vals)):
 J_vals = np.transpose(J_vals)
 
 # Surface plot
-
 fig = plt.figure()
 ax = fig.gca(projection='3d')
 theta0_vals, theta1_vals = np.meshgrid(theta0_vals, theta1_vals) # necessary for 3D graph
@@ -123,7 +115,7 @@ plt.show(block=False)
 plt.hold(False)
 
 
-# # Contour plot
+# Contour plot
 fig = plt.figure()
 ax = fig.add_subplot(111)
 # # Plot J_vals as 20 contours spaced logarithmically between 0.01 and 100
@@ -135,7 +127,6 @@ plt.hold(True)
 plt.plot(theta[0,0], theta[1,0], 'rx', markersize=10, linewidth=2)
 plt.show(block=False)
 plt.hold(False)
-
 
 input('Program paused. Press enter to finish.\n')
 
