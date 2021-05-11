@@ -14,25 +14,20 @@
 #
 # x refers to the population size in 10,000s
 # y refers to the profit in $10,000s
-
 import os, sys
-sys.path.append(os.path.dirname('ang/ex1/'))
+sys.path.append(os.getcwd() + os.path.dirname('/ang/ex1/'))
+from helpers import warmUpExercise, computeCost, gradientDescent, plotData
+
 import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
-import warmUpExercise as wue
-import plotData as plda
-import computeCost as cc
-import gradientDescent as grde
-
-
+from mpl_toolkits.mplot3d import Axes3D
 
 ## ==================== Part 1: Basic Function ====================
 print('Running warmUpExercise...')
 print('5x5 Identity Matrix: ')
 
-print(wue.warmUpExercise())
+print(warmUpExercise())
 
 input('Program paused. Press enter to continue.\n')
 
@@ -45,7 +40,7 @@ y = data[:, 1]
 m = len(y) # number of training examples
 
 # Plot Data
-plda.plotData(X, y)
+plotData(X, y)
 
 input('Program paused. Press enter to continue.\n')
 
@@ -60,10 +55,10 @@ iterations = 1500
 alpha = 0.01
 
 # compute and display initial cost
-print(cc.computeCost(X_padded, y, theta))
+print(computeCost(X_padded, y, theta))
 
 # run gradient descent
-theta = grde.gradientDescent(X_padded, y, theta, alpha, iterations)
+theta = gradientDescent(X_padded, y, theta, alpha, iterations)
 
 # print theta to screen
 print('Theta found by gradient descent: ')
@@ -97,7 +92,7 @@ J_vals = np.zeros((len(theta0_vals), len(theta1_vals)))
 for i in range(len(theta0_vals)):
     for j in range(len(theta1_vals)):
         t = [[theta0_vals[i]], [theta1_vals[j]]]
-        J_vals[i, j] = cc.computeCost(X_padded, y, t)
+        J_vals[i, j] = computeCost(X_padded, y, t)
 
 # Because of the way meshgrids work in the surf command, we need to
 # transpose J_vals before calling surf, or else the axes will be flipped

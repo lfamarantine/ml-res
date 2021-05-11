@@ -1,24 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import os, sys
-sys.path.append(os.path.dirname('ang/ex1/'))
-import computeCost as cc
-
-
-def gradientDescent(X, y, theta, alpha, num_iters):
-
-    # GRADIENTDESCENT Performs gradient descent to learn theta
-    #   theta = GRADIENTDESENT(X, y, theta, alpha, num_iters) updates theta by
-    #   taking num_iters gradient steps with learning rate alpha
-
-    # Initialize some useful values
-    m = len(y) # number of training examples
-    J_history = np.zeros((num_iters, 1))
-    for i in range(num_iters):
-        theta = theta - alpha * (1.0 / m) * np.transpose(X).dot(X.dot(theta) - np.transpose([y]))
-        J_history[i] = cc.computeCost(X, y, theta)
-
-    return theta
 
 
 def computeCost(X, y, theta):
@@ -37,6 +18,22 @@ def computeCost(X, y, theta):
     J = (1.0 / (2 * m)) * s.sum(axis=0)
 
     return J
+
+
+def gradientDescent(X, y, theta, alpha, num_iters):
+
+    # GRADIENTDESCENT Performs gradient descent to learn theta
+    #   theta = GRADIENTDESENT(X, y, theta, alpha, num_iters) updates theta by
+    #   taking num_iters gradient steps with learning rate alpha
+
+    # Initialize some useful values
+    m = len(y) # number of training examples
+    J_history = np.zeros((num_iters, 1))
+    for i in range(num_iters):
+        theta = theta - alpha * (1.0 / m) * np.transpose(X).dot(X.dot(theta) - np.transpose([y]))
+        J_history[i] = computeCost(X, y, theta)
+
+    return theta
 
 
 def plotData(x, y):

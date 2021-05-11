@@ -12,9 +12,7 @@ Machine Learning Resources
     7. K-means Clustering and Principal Component Analysis
     8. Anomaly Detection and Recommender Systems
     
-Notes:
-
-- run modules (eg. ex1) in terminal by calling `python ang/ex1/ex1.py`
+    Note: run modules (eg. ex1) in terminal by calling `python ang/ex1/ex1.py`
 
 
 
