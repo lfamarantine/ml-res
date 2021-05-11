@@ -48,3 +48,48 @@ def plotData(x, y):
 
 def warmUpExercise(*args, **kwargs):
     return np.identity(5)
+
+
+
+def featureNormalize(X):
+
+    # FEATURENORMALIZE Normalizes the features in X
+    #   FEATURENORMALIZE(X) returns a normalized version of X where
+    #   the mean value of each feature is 0 and the standard deviation
+    #   is 1. This is often a good preprocessing step to do when
+    #   working with learning algorithms.
+    X_norm = X
+    mu = np.zeros((1, X.shape[1]))
+    sigma = np.zeros((1, X.shape[1]))
+    for i in range(X.shape[1]):
+    	mu[:,i] = np.mean(X[:,i])
+    	sigma[:,i] = np.std(X[:,i])
+    	X_norm[:,i] = (X[:,i] - float(mu[:,i]))/float(sigma[:,i])
+
+    return X_norm, mu, sigma
+
+
+def gradientDescentMulti(X, y, theta, alpha, num_iters):
+
+    # GRADIENTDESCENTMULTI Performs gradient descent to learn theta
+    #   theta = GRADIENTDESCENTMULTI(x, y, theta, alpha, num_iters) updates theta by
+    #   taking num_iters gradient steps with learning rate alpha
+
+    # Initialize some useful values
+    m = len(y) # number of training examples
+    J_history = np.zeros((num_iters, 1))
+
+    for i in range(num_iters):
+        theta = theta - alpha*(1.0 / m) * np.transpose(X).dot(X.dot(theta) - np.transpose([y]))
+        J_history[i] = computeCost(X, y, theta)
+
+    return theta, J_history
+
+
+def normalEqn(X, y):
+    #   NORMALEQN(X,y) computes the closed-form solution to linear
+    #   regression using the normal equations.
+    theta = np.zeros((X.shape[1], 1))
+    theta = np.linalg.pinv(np.transpose(X).dot(X)).dot(np.transpose(X).dot(y))
+
+    return theta

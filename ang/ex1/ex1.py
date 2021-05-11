@@ -17,7 +17,6 @@
 import os, sys
 sys.path.append(os.getcwd() + os.path.dirname('/ang/ex1/'))
 from helpers import warmUpExercise, computeCost, gradientDescent, plotData
-
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
