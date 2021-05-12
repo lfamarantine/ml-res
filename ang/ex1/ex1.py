@@ -7,10 +7,10 @@
 #  linear exercise. You will need to complete the following functions
 #  in this exercise:
 #
-#     warmUpExercise.m
-#     plotData.m
-#     gradientDescent.m
-#     computeCost.m
+#     warmUpExercise
+#     plotData
+#     gradientDescent
+#     computeCost
 #
 # x refers to the population size in 10,000s
 # y refers to the profit in $10,000s

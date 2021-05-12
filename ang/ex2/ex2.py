@@ -2,11 +2,11 @@
 
 # You will need to complete the following functions
 # in this exercise:
-#     sigmoid.py
-#     costFunction.py
-#     predict.py
-#     plotData.py
-#     plotDecisionBoundary.py
+#     sigmoid
+#     costFunction
+#     predict
+#     plotData
+#     plotDecisionBoundary
 
 ## Initialization
 import numpy as np
