@@ -4,13 +4,13 @@
 #  exercise. You will need to complete the following functions
 #  in this exercise:
 #
-#     linearRegCostFunction.py
-#     learningCurve.py
-#     validationCurve.py
-#     trainLinearReg.py
-#     polyFeatures.py
-#     featureNormalize.py
-#     plotFit.py
+#     linearRegCostFunction
+#     learningCurve
+#     validationCurve
+#     trainLinearReg
+#     polyFeatures
+#     featureNormalize
+#     plotFit
 
 from scipy.io import loadmat
 import numpy as np

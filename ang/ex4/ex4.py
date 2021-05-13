@@ -4,10 +4,10 @@
 #  exercise. You will need to complete the following functions
 #  in this exercise:
 #
-#     displayData.py
-#     sigmoidGradient.py
-#     randInitializeWeights.py
-#     nnCostFunction.py
+#     displayData
+#     sigmoidGradient
+#     randInitializeWeights
+#     nnCostFunction
 
 from scipy.io import loadmat
 import numpy as np
