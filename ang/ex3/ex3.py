@@ -7,7 +7,7 @@ sys.path.append(os.getcwd() + os.path.dirname('/ang/ex3/'))
 from helpers import displayData, oneVsAll, predictOneVsAll
 
 #  This file contains code that helps you get started on the
-#  linear exercise. You will need to complete the following functions
+#  exercise. You will need to complete the following functions
 #  in this exercise:
 #
 #     displayData
