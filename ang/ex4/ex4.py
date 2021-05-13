@@ -1,8 +1,7 @@
 # ------------- Machine Learning - Topic 4: Neural Networks Learning
 
-# python adaptation of solved ex4.m
 #  This file contains code that helps you get started on the
-#  linear exercise. You will need to complete the following functions
+#  exercise. You will need to complete the following functions
 #  in this exercise:
 #
 #     displayData.py
