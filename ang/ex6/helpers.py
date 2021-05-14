@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn import svm
+import re
+from nltk import PorterStemmer
 
 
 def plotData(X, y):
@@ -166,4 +168,140 @@ def dataset3Params(X, y, Xval, yval):
     return C, sigma
 
 
+def readFile(filename):
+    #   file_contents = READFILE(filename) reads a file and returns its entire
+    #   contents in file_contents
 
+    # Load File
+    try:
+        with open(filename, 'r') as openFile:
+            file_contents = openFile.read()
+    except:
+        file_contents = ''
+        print('Unable to open {:s}'.format(filename))
+
+    return file_contents
+
+
+def getVocabList():
+    #   vocabList = GETVOCABLIST() reads the fixed vocabulary list in vocab.txt
+    #   and returns a cell array of the words in vocabList.
+
+    ## Read the fixed vocabulary list
+    with open('ang/ex6/data/vocab.txt', 'r') as vocabFile:
+        # Store all dictionary words in dictionary vocabList
+        vocabList = {}
+        for line in vocabFile.readlines():
+            i, word = line.split()
+            vocabList[word] = int(i)
+
+    return vocabList
+
+
+def processEmail(email_contents):
+    #   word_indices = PROCESSEMAIL(email_contents) preprocesses
+    #   the body of an email and returns a list of indices of the
+    #   words contained in the email.
+
+    # Load Vocabulary
+    vocabList = getVocabList()
+
+    # Init return value
+    word_indices = []
+
+    # ========================== Preprocess Email ===========================
+
+    # Find the Headers ( \n\n and remove )
+    # Uncomment the following lines if you are working with raw emails with the
+    # full headers
+
+    # hdrstart = email_contents.find("\n\n")
+    # if hdrstart:
+    #     email_contents = email_contents[hdrstart:]
+
+    # Lower case
+    email_contents = email_contents.lower()
+
+    # Strip all HTML
+    # Looks for any expression that starts with < and ends with > and replace
+    # and does not have any < or > in the tag it with a space
+    email_contents = re.sub('<[^<>]+>', ' ', email_contents)
+
+    # Handle Numbers
+    # Look for one or more characters between 0-9
+    email_contents = re.sub('[0-9]+', 'number', email_contents)
+
+    # Handle URLS
+    # Look for strings starting with http:// or https://
+    email_contents = re.sub('(http|https)://[^\s]*', 'httpaddr', email_contents)
+
+    # Handle Email Addresses
+    # Look for strings with @ in the middle
+    email_contents = re.sub('[^\s]+@[^\s]+', 'emailaddr', email_contents)
+
+    # Handle $ sign
+    email_contents = re.sub('[$]+', 'dollar', email_contents)
+
+
+    # ========================== Tokenize Email ===========================
+
+    # Output the email to screen as well
+    print('\n==== Processed Email ====\n\n')
+
+    # Process file
+    l = 0
+
+    # Slightly different order from matlab version
+
+    # Split and also get rid of any punctuation
+    # regex may need further debugging...
+    email_contents = re.split(r'[@$/#.-:&\*\+=\[\]?!(){},\'\'\">_<;%\s\n\r\t]+', email_contents)
+
+    for token in email_contents:
+
+        # Remove any non alphanumeric characters
+        token = re.sub('[^a-zA-Z0-9]', '', token)
+
+        # Stem the word
+        token = PorterStemmer().stem(token.strip())
+
+        # Skip the word if it is too short
+        if len(token) < 1:
+           continue
+
+        idx = vocabList[token] if token in vocabList else 0
+
+        # only add entries which are in vocabList
+        #   i.e. those with ind ~= 0,
+        #        given that ind is assigned 0 if str is not found in vocabList
+        if idx > 0:
+            word_indices.append(idx)
+
+        # Print to screen, ensuring that the output lines are not too long
+        if l + len(token) + 1 > 78:
+            print("")
+            l = 0
+        print('{:s}'.format(token)),
+        l = l + len(token) + 1
+
+    print('\n\n=========================\n')
+
+    return word_indices
+
+
+def emailFeatures(word_indices):
+    #   x = EMAILFEATURES(word_indices) takes in a word_indices vector and
+    #   produces a feature vector from the word indices.
+
+    # Total number of words in the dictionary
+    n = 1899
+
+    # You need to return the following variables correctly.
+    x = np.zeros((n, 1))
+
+    # iterate over idx items in word_indices
+    for idx in word_indices:
+        # assign 1 to index idx in x
+        x[idx] = 1
+
+    return x
