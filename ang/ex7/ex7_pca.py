@@ -17,7 +17,8 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import os, sys
 sys.path.append(os.getcwd() + os.path.dirname('/ang/ex7/'))
-from helpers import featureNormalize, pca, drawLine, projectData, recoverData, kMeansInitCentroids, runkMeans, hsv, plotDataPoints
+from helpers import featureNormalize, pca, drawLine, displayData, projectData, \
+    recoverData, kMeansInitCentroids, runkMeans, hsv, plotDataPoints
 
 
 ## ================== Part 1: Load Example Dataset  ===================
@@ -66,8 +67,8 @@ U, S = pca(X_norm)
 #  Draw the eigenvectors centered at mean of data. These lines show the
 #  directions of maximum variations in the dataset.
 plt.hold(True)
-dl.drawLine(mu, mu + 1.5 * S[0,0] * U[:,0].T, c='k', linewidth=2)
-dl.drawLine(mu, mu + 1.5 * S[1,1] * U[:,1].T, c='k', linewidth=2)
+drawLine(mu, mu + 1.5 * S[0,0] * U[:,0].T, c='k', linewidth=2)
+drawLine(mu, mu + 1.5 * S[1,1] * U[:,1].T, c='k', linewidth=2)
 plt.hold(False)
 
 print('Top eigenvector: \n')
@@ -98,11 +99,11 @@ plt.show(block=False)
 #  Project the data onto K = 1 dimension
 K = 1
 Z = projectData(X_norm, U, K)
-print('Projection of the first example: {:s}\n'.format(Z[0]))
+print('Projection of the first example: ', Z[0])
 print('(this value should be about 1.481274)\n')
 
 X_rec  = recoverData(Z, U, K)
-print('Approximation of the first example: {:f} {:f}\n'.format(X_rec[0, 0], X_rec[0, 1]))
+print('Approximation of the first example: ', X_rec[0, 0], X_rec[0, 1])
 print('(this value should be about  -1.047419 -1.047419)\n')
 
 #  Draw lines connecting the projected points to the original points
@@ -127,7 +128,7 @@ mat = loadmat('ang/ex7/data/ex7faces.mat')
 X = np.array(mat["X"])
 
 #  Display the first 100 faces in the dataset
-dd.displayData(X[:100, :])
+displayData(X[:100, :])
 
 input('Program paused. Press enter to continue.')
 
@@ -228,7 +229,7 @@ colors = np.array([palette[int(i)] for i in idx[sel]])
 
 #  Visualize the data and centroid memberships in 3D
 fig1 = plt.figure(1)
-ax = add_subplot(111, projection='3d')
+ax = fig1.add_subplot(111, projection='3d')
 ax.scatter(X[sel, 0], X[sel, 1], X[sel, 2], s=100, c=colors)
 plt.title('Pixel dataset plotted in 3D. Color shows centroid memberships')
 plt.show(block=False)
