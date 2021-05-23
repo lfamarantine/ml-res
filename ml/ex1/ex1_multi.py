@@ -6,7 +6,7 @@
 #   normalEqn.py
 #
 import os, sys
-sys.path.append(os.getcwd() + os.path.dirname('/ang/ex1/'))
+sys.path.append(os.getcwd() + os.path.dirname('/ml/ex1/'))
 from helpers import featureNormalize, gradientDescentMulti, normalEqn
 import numpy as np
 import matplotlib.pyplot as plt
@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 print('Loading data ...\n')
 
 ## Load Data
-data = np.loadtxt('ang/ex1/ex1data2.txt', delimiter=",")
+data = np.loadtxt('ml/ex1/ex1data2.txt', delimiter=",")
 X = data[:,:2]
 y = data[:,2]
 m = len(y) # number of training examples
@@ -93,7 +93,7 @@ print('Solving with normal equations...')
 #
 
 ## Load Data
-data = np.loadtxt('ang/ex1/ex1data2.txt', delimiter=",")
+data = np.loadtxt('ml/ex1/ex1data2.txt', delimiter=",")
 X = data[:,:2]
 y = data[:,2]
 m = len(y) # number of training examples

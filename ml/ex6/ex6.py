@@ -16,7 +16,7 @@ from scipy.io import loadmat
 import numpy as np
 import matplotlib.pyplot as plt
 import os, sys
-sys.path.append(os.getcwd() + os.path.dirname('/ang/ex6/'))
+sys.path.append(os.getcwd() + os.path.dirname('/ml/ex6/'))
 from helpers import plotData, svmTrain, visualizeBoundaryLinear, gaussianKernel, visualizeBoundary, dataset3Params
 
 
@@ -30,7 +30,7 @@ print('Loading and Visualizing Data ...')
 
 # Load from ex6data1:
 # You will have X, y in your environment
-mat = loadmat('ang/ex6/data/ex6data1.mat')
+mat = loadmat('ml/ex6/data/ex6data1.mat')
 X = mat["X"]
 y = mat["y"]
 
@@ -45,7 +45,7 @@ input('Program paused. Press enter to continue.')
 
 # Load from ex6data1:
 # You will have X, y in your environment
-mat = loadmat('ang/ex6/data/ex6data1.mat')
+mat = loadmat('ml/ex6/data/ex6data1.mat')
 X = mat["X"]
 y = mat["y"]
 
@@ -85,7 +85,7 @@ print('Loading and Visualizing Data ...')
 
 # Load from ex6data2:
 # You will have X, y in your environment
-mat = loadmat('ang/ex6/data/ex6data2.mat')
+mat = loadmat('ml/ex6/data/ex6data2.mat')
 X = mat["X"]
 y = mat["y"]
 
@@ -103,7 +103,7 @@ print('Training SVM with RBF Kernel (this may take 1 to 2 minutes) ...');
 
 # Load from ex6data2:
 # You will have X, y in your environment
-mat = loadmat('ang/ex6/data/ex6data2.mat')
+mat = loadmat('ml/ex6/data/ex6data2.mat')
 X = mat["X"]
 y = mat["y"]
 
@@ -133,7 +133,7 @@ print('Loading and Visualizing Data ...')
 
 # Load from ex6data3:
 # You will have X, y in your environment
-mat = loadmat('ang/ex6/data/ex6data3.mat')
+mat = loadmat('ml/ex6/data/ex6data3.mat')
 X = mat["X"]
 y = mat["y"]
 
@@ -151,7 +151,7 @@ input('Program paused. Press enter to continue.')
 
 # Load from ex6data3:
 # You will have X, y in your environment
-mat = loadmat('ang/ex6/data/ex6data3.mat')
+mat = loadmat('ml/ex6/data/ex6data3.mat')
 X = mat["X"]
 y = mat["y"]
 Xval = mat["Xval"]

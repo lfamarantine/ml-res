@@ -13,7 +13,7 @@ from scipy.io import loadmat
 import numpy as np
 from scipy.optimize import minimize
 import os, sys
-sys.path.append(os.getcwd() + os.path.dirname('/ang/ex4/'))
+sys.path.append(os.getcwd() + os.path.dirname('/ml/ex4/'))
 from helpers import displayData, nnCostFunction, sigmoidGradient, randInitializeWeights, checkNNGradients, predict
 ## Setup the parameters you will use for this exercise
 input_layer_size  = 400  # 20x20 Input Images of Digits
@@ -30,7 +30,7 @@ num_labels = 10          # 10 labels, from 1 to 10
 # Load Training Data
 print('Loading and Visualizing Data ...')
 
-mat = loadmat('ang/ex4/ex4data1.mat')
+mat = loadmat('ml/ex4/ex4data1.mat')
 
 X = mat["X"]
 y = mat["y"]
@@ -57,7 +57,7 @@ input('Program paused. Press enter to continue.\n')
 print('Loading Saved Neural Network Parameters ...')
 
 # Load the weights into variables Theta1 and Theta2
-mat = loadmat('ang/ex4/ex4weights.mat')
+mat = loadmat('ml/ex4/ex4weights.mat')
 Theta1 = mat["Theta1"]
 Theta2 = mat["Theta2"]
 

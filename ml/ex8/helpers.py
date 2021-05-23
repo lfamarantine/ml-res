@@ -245,7 +245,7 @@ def loadMovieList():
     #   and returns a cell array of the words in movieList.
 
     ## Read the fixed movieulary list
-    with open("ang/ex8/data/movie_ids.txt") as movie_ids_file:
+    with open("ml/ex8/data/movie_ids.txt") as movie_ids_file:
 
         # Store all movies in movie list
         n = 1682  # Total number of movies

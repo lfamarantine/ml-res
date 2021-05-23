@@ -13,7 +13,7 @@ from scipy.io import loadmat
 import numpy as np
 import matplotlib.pyplot as plt
 import os, sys
-sys.path.append(os.getcwd() + os.path.dirname('/ang/ex7/'))
+sys.path.append(os.getcwd() + os.path.dirname('/ml/ex7/'))
 from helpers import findClosestCentroids, computeCentroids, runkMeans, kMeansInitCentroids
 
 
@@ -25,7 +25,7 @@ from helpers import findClosestCentroids, computeCentroids, runkMeans, kMeansIni
 print('Finding closest centroids.\n')
 
 # Load an example dataset that we will be using
-mat = loadmat('ang/ex7/data/ex7data2.mat')
+mat = loadmat('ml/ex7/data/ex7data2.mat')
 X = mat["X"]
 
 # Select an initial set of centroids
@@ -71,7 +71,7 @@ input('Program paused. Press enter to continue.')
 print('\nRunning K-Means clustering on example dataset.\n\n')
 
 # Load an example dataset
-mat = loadmat('ang/ex7/data/ex7data2.mat')
+mat = loadmat('ml/ex7/data/ex7data2.mat')
 X = mat["X"]
 
 # Settings for running K-Means
@@ -102,7 +102,7 @@ input('Program paused. Press enter to continue.')
 print('\nRunning K-Means clustering on pixels from an image.\n\n')
 
 #  Load an image of a bird
-mat = loadmat('ang/ex7/data/bird_small.mat')
+mat = loadmat('ml/ex7/data/bird_small.mat')
 A = mat["A"]
 
 A = A / 255.0 # Divide by 255 so that all values are in the range 0 - 1

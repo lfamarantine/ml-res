@@ -14,7 +14,7 @@
 from scipy.io import loadmat
 import numpy as np
 import os, sys
-sys.path.append(os.getcwd() + os.path.dirname('/ang/ex6/'))
+sys.path.append(os.getcwd() + os.path.dirname('/ml/ex6/'))
 from helpers import readFile, processEmail, emailFeatures, svmTrain, getVocabList
 
 
@@ -28,7 +28,7 @@ from helpers import readFile, processEmail, emailFeatures, svmTrain, getVocabLis
 print('Preprocessing sample email (emailSample1.txt)')
 
 # Extract Features
-file_contents = readFile('ang/ex6/data/emailSample1.txt')
+file_contents = readFile('ml/ex6/data/emailSample1.txt')
 word_indices  = processEmail(file_contents)
 
 # Print Stats
@@ -46,7 +46,7 @@ input('Program paused. Press enter to continue.')
 print('Extracting features from sample email (emailSample1.txt)')
 
 # Extract Features
-file_contents = readFile('ang/ex6/data/emailSample1.txt')
+file_contents = readFile('ml/ex6/data/emailSample1.txt')
 word_indices = processEmail(file_contents)
 features = emailFeatures(word_indices)
 
@@ -62,7 +62,7 @@ input('Program paused. Press enter to continue.')
 
 # Load the Spam Email dataset
 # You will have X, y in your environment
-mat = loadmat('ang/ex6/data/spamTrain.mat')
+mat = loadmat('ml/ex6/data/spamTrain.mat')
 X = mat["X"]
 y = mat["y"]
 
@@ -84,7 +84,7 @@ input('Training Accuracy: {:f}'.format( np.mean((p == y).astype(int)) * 100 ))
 
 # Load the test dataset
 # You will have Xtest, ytest in your environment
-mat = loadmat('ang/ex6/data/spamTest.mat')
+mat = loadmat('ml/ex6/data/spamTest.mat')
 Xtest = mat["Xtest"]
 ytest = mat["ytest"]
 
@@ -130,7 +130,7 @@ input('Program paused. Press enter to continue.')
 # Set the file to be read in (change this to spamSample2.txt,
 # emailSample1.txt or emailSample2.txt to see different predictions on
 # different emails types). Try your own emails as well!
-filename = 'ang/ex6/data/spamSample1.txt'
+filename = 'ml/ex6/data/spamSample1.txt'
 
 # Read and predict
 file_contents = readFile(filename)
@@ -141,7 +141,7 @@ p = model.predict(x.flatten())
 print('\nProcessed {:s}\n\nSpam Classification: {:s}\n'.format(filename, p))
 print('(1 indicates spam, 0 indicates not spam)\n\n')
 
-filename = 'ang/ex6/data/spamSample2.txt'
+filename = 'ml/ex6/data/spamSample2.txt'
 
 # Read and predict
 file_contents = readFile(filename)
@@ -152,7 +152,7 @@ p = model.predict(x.flatten())
 print('\nProcessed {:s}\n\nSpam Classification: {:s}\n'.format(filename, p))
 print('(1 indicates spam, 0 indicates not spam)\n\n')
 
-filename = 'ang/ex6/data/emailSample1.txt'
+filename = 'ml/ex6/data/emailSample1.txt'
 
 # Read and predict
 file_contents = readFile(filename)
@@ -163,7 +163,7 @@ p = model.predict(x.flatten())
 print('\nProcessed {:s}\n\nSpam Classification: {:s}\n'.format(filename, p))
 print('(1 indicates spam, 0 indicates not spam)\n\n')
 
-filename = 'ang/ex6/data/emailSample2.txt'
+filename = 'ml/ex6/data/emailSample2.txt'
 
 # Read and predict
 file_contents = readFile(filename)

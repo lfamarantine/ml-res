@@ -12,13 +12,13 @@
 import numpy as np
 from scipy.optimize import fmin, fmin_bfgs
 import os, sys
-sys.path.append(os.getcwd() + os.path.dirname('/ang/ex2/'))
+sys.path.append(os.getcwd() + os.path.dirname('/ml/ex2/'))
 from helpers import sigmoid, costFunction, predict, plotData, plotDecisionBoundary
 
 # Load Data
 #  The first two columns contains the exam scores and the third column
 #  contains the label.
-data = np.loadtxt('ang/ex2/ex2data1.txt', delimiter=",")
+data = np.loadtxt('ml/ex2/ex2data1.txt', delimiter=",")
 X = data[:, :2]
 y = data[:, 2]
 

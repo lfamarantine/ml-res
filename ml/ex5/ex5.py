@@ -16,7 +16,7 @@ from scipy.io import loadmat
 import numpy as np
 import matplotlib.pyplot as plt
 import os, sys
-sys.path.append(os.getcwd() + os.path.dirname('/ang/ex5/'))
+sys.path.append(os.getcwd() + os.path.dirname('/ml/ex5/'))
 from helpers import linearRegCostFunction, trainLinearReg, learningCurve, polyFeatures, featureNormalize, plotFit, validationCurve
 
 ## =========== Part 1: Loading and Visualizing Data =============
@@ -28,7 +28,7 @@ from helpers import linearRegCostFunction, trainLinearReg, learningCurve, polyFe
 # Load Training Data
 print('Loading and Visualizing Data ...')
 
-mat = loadmat('ang/ex5/ex5data1.mat')
+mat = loadmat('ml/ex5/ex5data1.mat')
 
 X = mat["X"]
 y = mat["y"]

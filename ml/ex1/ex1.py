@@ -15,7 +15,7 @@
 # x refers to the population size in 10,000s
 # y refers to the profit in $10,000s
 import os, sys
-sys.path.append(os.getcwd() + os.path.dirname('/ang/ex1/'))
+sys.path.append(os.getcwd() + os.path.dirname('/ml/ex1/'))
 from helpers import warmUpExercise, computeCost, gradientDescent, plotData
 import numpy as np
 import matplotlib.pyplot as plt
@@ -33,7 +33,7 @@ input('Program paused. Press enter to continue.\n')
 ## ======================= Part 2: Plotting =======================
 print('Plotting Data...')
 
-data = np.loadtxt('ang/ex1/ex1data1.txt', delimiter=",")
+data = np.loadtxt('ml/ex1/ex1data1.txt', delimiter=",")
 X = data[:, 0]
 y = data[:, 1]
 m = len(y) # number of training examples

@@ -3,7 +3,7 @@
 import numpy as np
 from scipy.io import loadmat
 import os, sys
-sys.path.append(os.getcwd() + os.path.dirname('/ang/ex3/'))
+sys.path.append(os.getcwd() + os.path.dirname('/ml/ex3/'))
 from helpers import displayData, oneVsAll, predictOneVsAll
 
 #  This file contains code that helps you get started on the
@@ -29,7 +29,7 @@ num_labels = 10          # 10 labels, from 1 to 10
 # Load Training Data
 print('Loading and Visualizing Data ...')
 
-mat = loadmat("ang/ex3/ex3data1.mat")
+mat = loadmat("ml/ex3/ex3data1.mat")
 
 X = mat["X"]
 y = mat["y"]

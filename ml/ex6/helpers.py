@@ -188,7 +188,7 @@ def getVocabList():
     #   and returns a cell array of the words in vocabList.
 
     ## Read the fixed vocabulary list
-    with open('ang/ex6/data/vocab.txt', 'r') as vocabFile:
+    with open('ml/ex6/data/vocab.txt', 'r') as vocabFile:
         # Store all dictionary words in dictionary vocabList
         vocabList = {}
         for line in vocabFile.readlines():

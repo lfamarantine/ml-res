@@ -16,7 +16,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import os, sys
-sys.path.append(os.getcwd() + os.path.dirname('/ang/ex7/'))
+sys.path.append(os.getcwd() + os.path.dirname('/ml/ex7/'))
 from helpers import featureNormalize, pca, drawLine, displayData, projectData, \
     recoverData, kMeansInitCentroids, runkMeans, hsv, plotDataPoints
 
@@ -29,7 +29,7 @@ print('Visualizing example dataset for PCA.\n');
 
 #  The following command loads the dataset. You should now have the
 #  variable X in your environment
-mat = loadmat('ang/ex7/data/ex7data1.mat')
+mat = loadmat('ml/ex7/data/ex7data1.mat')
 X = np.array(mat["X"])
 
 # interactive graphs
@@ -124,7 +124,7 @@ input('Program paused. Press enter to continue.')
 print('Loading face dataset.\n');
 
 #  Load Face dataset
-mat = loadmat('ang/ex7/data/ex7faces.mat')
+mat = loadmat('ml/ex7/data/ex7faces.mat')
 X = np.array(mat["X"])
 
 #  Display the first 100 faces in the dataset
@@ -206,7 +206,7 @@ plt.close()
 # For this to work, you need to complete the K-Means assignment first
 
 # A = double(imread('bird_small.png'));
-mat = loadmat('ang/ex7/data/bird_small.mat')
+mat = loadmat('ml/ex7/data/bird_small.mat')
 A = mat["A"]
 
 # from ex7.py, part 4

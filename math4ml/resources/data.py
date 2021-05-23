@@ -43,7 +43,7 @@ y_heights = np.array([  0.        ,  0.        ,  0.        ,  0.        ,  0.  
 from scipy.io import loadmat
 
 def load_mnist():
-    path = "./mfml/resources/mnist.mat"
+    path = "./math4ml/resources/mnist.mat"
     raw = loadmat(path)
     mnist = {
         "data": raw["data"].T,

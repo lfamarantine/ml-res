@@ -15,7 +15,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize
 import os, sys
-sys.path.append(os.getcwd() + os.path.dirname('/ang/ex8/'))
+sys.path.append(os.getcwd() + os.path.dirname('/ml/ex8/'))
 from helpers import cofiCostFunc, checkCostFunction, loadMovieList, normalizeRatings
 
 
@@ -26,7 +26,7 @@ from helpers import cofiCostFunc, checkCostFunction, loadMovieList, normalizeRat
 print('Loading movie ratings dataset.\n')
 
 #  Load data
-mat = loadmat('ang/ex8/data/ex8_movies.mat')
+mat = loadmat('ml/ex8/data/ex8_movies.mat')
 Y = mat["Y"]
 R = mat["R"]
 
@@ -55,7 +55,7 @@ input('Program paused. Press enter to continue.')
 #  cofiCostFunc.m to return J.
 
 #  Load pre-trained weights (X, Theta, num_users, num_movies, num_features)
-mat = loadmat('ang/ex8/data/ex8_movieParams.mat')
+mat = loadmat('ml/ex8/data/ex8_movieParams.mat')
 X = mat["X"]
 Theta = mat["Theta"]
 num_users = mat["num_users"]
@@ -169,7 +169,7 @@ input('Program paused. Press enter to continue.')
 print('\nTraining collaborative filtering...\n')
 
 #  Load data
-mat = loadmat('ang/ex8/data/ex8_movies.mat')
+mat = loadmat('ml/ex8/data/ex8_movies.mat')
 Y = mat["Y"]
 R = mat["R"]
 

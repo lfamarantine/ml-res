@@ -13,7 +13,7 @@ from scipy.io import loadmat
 import numpy as np
 import matplotlib.pyplot as plt
 import os, sys
-sys.path.append(os.getcwd() + os.path.dirname('/ang/ex8/'))
+sys.path.append(os.getcwd() + os.path.dirname('/ml/ex8/'))
 from helpers import estimateGaussian, multivariateGaussian, visualizeFit, selectThreshold
 
 
@@ -30,7 +30,7 @@ print('Visualizing example dataset for outlier detection.\n');
 
 #  The following command loads the dataset. You should now have the
 #  variables X, Xval, yval in your environment
-mat = loadmat('ang/ex8/data/ex8data1.mat')
+mat = loadmat('ml/ex8/data/ex8data1.mat')
 X = mat["X"]
 Xval = mat["Xval"]
 yval = mat["yval"].flatten()
@@ -106,7 +106,7 @@ input('Program paused. Press enter to continue.')
 
 #  Loads the second dataset. You should now have the
 #  variables X, Xval, yval in your environment
-mat = loadmat('ang/ex8/data/ex8data2.mat')
+mat = loadmat('ml/ex8/data/ex8data2.mat')
 X = mat["X"]
 Xval = mat["Xval"]
 yval = mat["yval"].flatten()
