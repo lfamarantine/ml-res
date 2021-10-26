@@ -34,3 +34,11 @@ Machine Learning Resources
     1. From Concept to Data Analysis
     2. Techniques and Models 
     3. Mixture Models
+
+
+`nlp`: Natural Language Processing by DeepLearning.AI
+
+    1. NLP with Classification & Vector Spaces
+    2. NLP with Probabilistic Models
+    3. NLP with Sequence Models
+    4. NLP with Attention Models
